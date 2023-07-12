@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="img\Art_26385.png">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Mi Portafolio</div>
+        <ul class="navbar-options">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="experiencia.html">Experiencia</a></li>
+          <li><a href="educacion.html">Educación</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      
+  <div class="container">
+    <h1>¿QUIEN SOY?</h1>
+    <img class="img3"src="img\Yo.jpeg" alt="">
+    <img class="img3"src="img\img3.jpeg">
+    <p>Hola, ¡bienvenido! mi nombre es Jhon Eduardo Forero Medina,  soy estudiante de diseño grafico cursando mi tercer semestre, mi tecnico laboral consiste en el manejo de herramientas para la creaciom grafica como la suite adobe, coreldraw entre otras. transformo ideas y pensamientos en diseños y piezas graficas con estetica y profesionalismo.</p>    
+    <h2>Mis Gustos</h2>
+    <p>Mis gustos son: dibujar, leer, hacer deporte, pintar, musica rock y baladas.</p>    
+    <h2>Mis Pasatiempos</h2>
+    <p>Mis pasatiempos son: tocar bateria, salir a caminar, nadar, acampar, jugar ajedrez, ver peliculas y videos de terror.</p>    
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Sean todos bienvenidos a mi página web</h3>
+        <p>¡Muchas gracias por visitar mi pagina!</p>
+        <button id="closeBtn">Cerrar</button>
+    </div>
+</div>
+
+  <script>
+    // Agrega la funcionalidad de redireccionamiento al hacer clic en los enlaces de la barra de navegación
+    var navbar = document.querySelector('.navbar ul');
+    
+    navbar.addEventListener('click', function(event) {
+      var link = event.target.closest('a');
+      
+      if (link) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+        
+        var targetPage = link.getAttribute('href');
+        window.location.href = targetPage; // Redirige a la página correspondiente
+      }
+    });
+    // Muestra la ventana modal al cargar la página
+    window.onload = function() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "block";
+            
+            // Obtiene el botón de cerrar y agrega el evento clic para cerrar la ventana modal
+            var closeBtn = document.getElementById("closeBtn");
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // Cierra la ventana modal al hacer clic en cualquier área fuera del contenido de la ventana modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+  </script>
+</body>
+</html>
